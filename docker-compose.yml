@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    container_name: ${CONTAINER_NAME_HEADER}_app
+    build: ./${DOCKER_DIRECTORY_NAME}/app
+    ports:
+        - "${APP_PORT}:8080"
+    volumes:
+      - ./${APP_WORK_SPACE}:/app
+    tty: true
+    stdin_open: true
